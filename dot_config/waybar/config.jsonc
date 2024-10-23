@@ -1,0 +1,82 @@
+// -*- mode: jsonc -*-
+{
+	"layer": "top",
+	"position": "top",
+	"height": 30,
+	"spacing": 4,
+	"reload_style_on_change": true,
+	"modules-left": [
+		"sway/workspaces",
+		"sway/mode"
+	],
+	"modules-center": [
+		"sway/window"
+	],
+	"modules-right": [
+		"user",
+		"wireplumber",
+		"keyboard-state",
+		"network",
+		"memory",
+		"clock",
+		"tray"
+	],
+	"clock": {
+		"format": "{:%r}",
+		"timezone": "America/Phoenix"
+	},
+	"keyboard-state": {
+		"numlock": true,
+		"capslock": true,
+		"format": {
+			"numlock": "N: {icon}",
+			"capslock": "C: {icon}"
+		},
+		"format-icons": {
+			"locked": "🔒",
+			"unlocked": "🔓"
+		}
+	},
+	"memory": {
+		"format": "{used:0.1f}G/{total:0.1f}G"
+	},
+	"network": {
+		"interface": "enp0s31f6",
+		"format": "{ifname}",
+		"format-ethernet": "{ifname}: {ipaddr}",
+		"format-disconnected": "Disconnected",
+		"tooltip": true,
+		"tooltip-format": "Interface: {ifname}",
+		"tooltip-format-ethernet": "Connected via Ethernet: {ifname}: {ipaddr}",
+		"tooltip-format-disconnected": "The interface has been disconnected"
+	},
+	"sway/mode": {
+		"format": "{}",
+		"tooltip": true
+	},
+	"sway/window": {
+		"format": "{title}"
+	},
+	"sway/workspaces": {
+		"format": "{name}",
+		"disable-scroll": true,
+		"disable-click": true
+	},
+	"tray": {
+		"icon-size": 21,
+		"spacing": 10
+	},
+	"user": {
+		"format": "{user}",
+		"height": 30,
+		"width": 30,
+		"avatar": "/home/max/.face",
+		"icon": true,
+		"open-on-click": false
+	},
+	"wireplumber": {
+		"format": "🔈 {volume}%",
+		"format-muted": "🔇",
+		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+	}
+}

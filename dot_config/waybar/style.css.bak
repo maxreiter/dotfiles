@@ -1,0 +1,157 @@
+* {
+	font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+	font-size: 13px;
+}
+
+window#waybar {
+	background-color: rgba(0, 0, 0, 0.5);
+	border-bottom: 3px solid #D3C6AA;
+	color: #D3C6AA;
+	transition-property: background-color;
+	transition-duration: .5s;
+}
+
+window#waybar.empty {
+	background-color: transparent;
+	border: 0;
+}
+
+window#waybar.hidden {
+	opacity: 0.2
+}
+
+window#waybar.solo #window,
+window#waybar.floating #window,
+window#waybar.tiled #window,
+window#waybar.stacked #window,
+window#waybar.tabbed #window {
+	color: #D3C6AA;
+	padding: 5px;
+	background-color: #384B55;
+	box-shadow: inset 0 -3px #7A8478;
+}
+
+button {
+	box-shadow: inset 0 -3px transparent;
+	border: none;
+	border-radius: 0;
+}
+
+button:hover {
+	background: inherit;
+	box-shadow: inset 0 -3px #7A8478;
+}
+
+#workspaces button {
+	padding: 0 5px;
+	background-color: transparent;
+	color: #D3C6AA;
+}
+
+#workspaces button:hover {
+	background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.focused {
+	background-color: #384B55;
+	color: #D3C6AA;
+	box-shadow: inset 0 -3px #7A8478;
+}
+
+#workspaces button.urgent {
+	background-color: #E67E80;
+}
+
+#mode {
+	background-color: #E67E80;
+	box-shadow: inset 0 -3px #7A8478;
+}
+
+#clock,
+#memory,
+#network,
+#wireplumber,
+#tray,
+#mode {
+	padding: 0 10px;
+	color: #000000;
+}
+
+#user {
+	background-color: #E69875;
+	color: #000000;
+	padding-right: 10px;
+}
+
+#user image {
+	padding-right: 5px;
+}
+
+#window,
+#workspaces {
+	margin: 0 4px;
+}
+
+/* If workspaces is in the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+	margin-left: 0;
+}
+
+/* If workspaces is in the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+	margin-right: 0;
+}
+
+#clock {
+	background-color: #D699B6;
+}
+
+#label:focus {
+	background-color: #000000;
+}
+
+#memory {
+	background-color: #7FBBB3;
+}
+
+#network {
+	background-color: #83C092;
+}
+
+#network.disconnected {
+	background-color: #E67E80;
+}
+
+#wireplumber {
+	background-color: #DBBC7F;
+	color: #000000;
+}
+
+#wireplumber.muted {
+	background-color: #E67E80;
+}
+
+#tray {
+	background-color: #E69875;
+}
+
+#tray > .passive {
+	-gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+	-gtk-icon-effect: highlight;
+	background: #E69875;
+}
+
+#keyboard-state {
+	background-color: #D3C6AA;
+	color: #000000;
+	padding: 0 0px;
+	margin: 0 5px;
+	min-width: 15px;
+}
+
+#keyboard-state > label {
+	padding: 0 5px;
+}

@@ -1,0 +1,12 @@
+# vim:ft=gitignore
+
+# ignore .git directories
+**/.git/
+**/.git/**/*
+
+# ignore .github directories
+**/.github/
+**/.github/**/*
+
+# ignore .gitignore
+.gitignore
