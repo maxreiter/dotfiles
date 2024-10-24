@@ -85,7 +85,7 @@ require("lazy").setup({
   "tpope/vim-sleuth",
 
   {
-    "lewis6691/gitsigns.nvim",
+    "lewis6991/gitsigns.nvim",
     opts = {
       signs = {
         add = { text = "+" },
@@ -254,7 +254,7 @@ require("lazy").setup({
               callback = vim.lsp.buf.document_highlight,
             })
 
-            vim.api.nvim_create_autocmd({ "CursorMove", "CursorMoveI" }, {
+            vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
               buffer = event.buf,
               group = highlight_augroup,
               callback = vim.lsp.buf.clear_references,
