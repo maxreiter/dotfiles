@@ -353,7 +353,7 @@ require("lazy").setup({
     event = "InsertEnter",
     dependencies = {
       {
-        "L3M0N4D3/LuaSnip",
+        "L3MON4D3/LuaSnip",
         build = (function()
           if vim.fn.has "win32" == 1 or vim.fn.executable "make" == 0 then
             return
@@ -362,7 +362,7 @@ require("lazy").setup({
         end)(),
       },
       "saadparwaiz1/cmp_luasnip",
-      "harsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-path",
     },
     config = function()
