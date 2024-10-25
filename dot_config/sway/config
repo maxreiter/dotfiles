@@ -1,6 +1,7 @@
 # VARIABLES
 set $mod Mod4
 
+set $scripts "~/.config/sway/scripts"
 set $term foot
 set $menu fuzzel | xargs swaymsg exec --
 
@@ -51,6 +52,7 @@ bindsym $mod+Shift+q kill
 # start launcher
 bindsym $mod+d exec $menu
 
+# lockscreen
 bindsym $mod+l exec swaylock
 
 # reload config file
@@ -59,9 +61,15 @@ bindsym $mod+Shift+c reload
 # exit sway
 bindsym $mod+Shift+e exec swaynag -t warning -m "Are you sure you want to exit?" -B "Yes" "swaymsg exit"
 
+# screenshots
+bindsym $mod+Shift+s exec $scripts/screenshot.fish
+
 # drag floating windows with $mod + m1
 # resize with $mod + m2
 floating_modifier $mod normal
+
+# toggle floating
+bindsym $mod+s floating disable
 
 # moving around
 

@@ -1,6 +1,9 @@
 # VARIABLES
 set -g EDITOR nvim
 
+# SET $XDG_* VARIABLES
+source_user_dirs
+
 # ALIASES
 alias vim nvim
 
