@@ -10,3 +10,7 @@
 
 # ignore .gitignore
 .gitignore
+
+# ignore repo metadata
+README.md
+LICENSE
