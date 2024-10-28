@@ -8,6 +8,8 @@ vim.opt.shiftwidth = 4
 -- support colorscheme in tmux
 vim.opt.termguicolors = true
 
+vim.opt.modifiable = true
+
 -- enable line numbers
 vim.opt.number = true
 
