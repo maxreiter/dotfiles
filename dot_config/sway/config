@@ -1,93 +1,139 @@
-# VARIABLES
+#############
+# VARIABLES #
+#############
+
+# Set the modifier key to the "Windows" key.
 set $mod Mod4
 
+# Set the scripts directory.
+# Scripts are written in Fish.
 set $scripts "~/.config/sway/scripts"
+
+# Set the terminal emulator to use.
 set $term foot
+
+# Set the application launcher.
 set $menu fuzzel | xargs swaymsg exec --
 
-# colors
+###########
+# VISUALS #
+###########
+
+# Set the color scheme to match Dracula.
 client.focused #6272A4 #6272A4 #F8F8F2
 client.focused_inactive #44475A #44475A #F8F8F2
 client.unfocused #282A36 #282A36 #F8F8F2
 client.urgent #FF5555 #FF5555 #F8F8F2
 
+# Enable gaps between windows.
 gaps inner 5
 
-# polkit
+##############
+# AUTOSTARTS #
+##############
+
+# Enable Polkit for authentication.
 exec "/usr/lib/polkit-kde-authentication-agent-1"
 
-# mako (notifications)
+# Enable mako for notifications.
 exec mako
 
-# OUTPUTS
+# Enable swayidle for screen locking & timeout.
+exec swayidle
 
-# wallpaper
+###########
+# OUTPUTS #
+###########
+
+# Set the for all outputs.
 output * bg /home/max/.xdg/pictures/wallpapers/space1.png fill
 
-# monitors
+# Scale Sway to ensure everything fits 4k.
 output DP-1 scale 2
+
+# Set the position & resolution of the main monitor.
 output DP-1 pos 0 0 res 3840x2160
+
+# Set the position & resolution of the seconday monitor.
+# Using a negative number positions it on the left of DP-1.
 output DP-2 pos -1920 0 res 1920x1080
 
-# mark applications running in xwayland as such
+###########
+# WINDOWS #
+###########
+
+# Mark all applications running in XWayland as such.
 for_window [shell="xwayland"] title_format "[XWayland] %title"
 
-# set dolphin to floating
+# Resize Dolphin & toggle floating.
 for_window [title=".* — Dolphin"] floating enable, resize set width 1200 height 800
 
-# handle tdx windows
+# Set TeamDynamix service request windows to float.
 for_window [title=".*Service Request.* - Google Chrome"] floating enable
 
-# idle
-exec swayidle -w
+# Set TeamDynamix incident windows to float.
+for_window [title=".*Incident.* - Google Chrome"] floating enable
 
-# bindings
+# Assign Firefox to workspace 2.
+assign [app_id=firefox] workspace 2
 
-# start terminal
+# Assign Google Chrome to workspace 2.
+assign [app_id=google-chrome] workspace 2
+
+# Assign Discord to workspace 3.
+assign [app_id=discord] workspace 3
+
+############
+# BINDINGS #
+############
+
+# Open a terminal.
 bindsym $mod+Return exec $term
 
-# kill focused window
+# Kill the focused window.
 bindsym $mod+Shift+q kill
 
-# start launcher
+# Open the application launcher.
 bindsym $mod+d exec $menu
 
-# lockscreen
+# Lock the screen.
 bindsym $mod+l exec swaylock
 
-# reload config file
+# Reload the config file in place.
 bindsym $mod+Shift+c reload
 
-# exit sway
+# Open a prompt that exits Sway.
 bindsym $mod+Shift+e exec swaynag -t warning -m "Are you sure you want to exit?" -B "Yes" "swaymsg exit"
 
-# screenshots
+# Execute a script that takes a screenshot.
 bindsym $mod+Shift+s exec $scripts/screenshot.fish
 
-# drag floating windows with $mod + m1
-# resize with $mod + m2
+# Open Firefox and Chrome.
+bindsym $mod+Shift+b exec google-chrome-stable; exec firefox
+
+# Open Discord.
+bindsym $mod+Shift+d exec discord --enable-features=UseOzonePlatform --ozone-platform=wayland
+
+# Enable dragging floating windows with the modifier key & mouse 1.
+# Resize windows with the modifier key and mouse 2.
 floating_modifier $mod normal
 
-# toggle floating
-bindsym $mod+s floating disable
+# Toggle floating on the focused window.
+bindsym $mod+s floating toggle
 
-# moving around
-
-# move focus
+# Switch focus using the modifier key & arrow keys.
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# move focused window
+# Move windows using the modifier key, shift, and arrow keys.
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# workspaces
-
-# switch
+# Switch workspaces with the modifier key & numbers.
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
 bindsym $mod+3 workspace number 3
@@ -99,7 +145,7 @@ bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
 
-# move containers
+# Move windows to different workspaces using the modifier key, shift, and numbers.
 bindsym $mod+Shift+1 move container to workspace number 1
 bindsym $mod+Shift+2 move container to workspace number 2
 bindsym $mod+Shift+3 move container to workspace number 3
@@ -111,31 +157,36 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
-# layout
-
-# split styles
+# Toggle splitting the screen horizontally.
 bindsym $mod+b splith
+
+# Toggle splitting the screen vertically.
 bindsym $mod+v splitv
 
-# fullscreen
+# Toggle fullscreen on the focused window.
 bindsym $mod+f fullscreen
 
-# resize
+# Define resize mode.
 mode "resize" {
-	# arrow keys
+	# In resize mode, grow or shrink the focused window with the arrow keys.
 	bindsym Left resize shrink width 10px
 	bindsym Down resize grow height 10px
 	bindsym Up resize shrink height 10px
 	bindsym Right resize grow width 10px
 
-	# return to default
+	# Exit resize mode.
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
 }
 
+# Enable resize mode.
 bindsym $mod+r mode "resize"
 
-# status bar
+##############
+# STATUS BAR #
+##############
+
+# Enable waybar as the status bar.
 bar swaybar_command waybar
 
 include /etc/sway/config.d/*
