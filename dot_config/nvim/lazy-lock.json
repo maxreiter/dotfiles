@@ -7,6 +7,8 @@
   "dracula.nvim": { "branch": "master", "commit": "4a06c30935ccc54f8f007b415b2836933887ee65" },
   "fidget.nvim": { "branch": "main", "commit": "d855eed8a06531a7e8fd0684889b2943f373c469" },
   "gitsigns.nvim": { "branch": "main", "commit": "ee7634ab4f0a6606438fe13e16cbf2065589a5ed" },
+  "go.nvim": { "branch": "master", "commit": "3ea80d76c1974921e8fb42066c3878bc05c9ec4e" },
+  "guihua.lua": { "branch": "master", "commit": "225db770e36aae6a1e9e3a65578095c8eb4038d3" },
   "lazy.nvim": { "branch": "main", "commit": "077102c5bfc578693f12377846d427f49bc50076" },
   "lazydev.nvim": { "branch": "main", "commit": "491452cf1ca6f029e90ad0d0368848fac717c6d2" },
   "lualine.nvim": { "branch": "master", "commit": "b431d228b7bbcdaea818bdc3e25b8cdbe861f056" },
