@@ -1,6 +1,7 @@
 # VARIABLES
 set -g EDITOR nvim
 
+# ADD GOBIN TO PATH
 fish_add_path -aP $(go env GOPATH)/bin
 
 # SET $XDG_* VARIABLES

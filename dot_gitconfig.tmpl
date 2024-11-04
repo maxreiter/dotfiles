@@ -1,0 +1,9 @@
+[user]
+	name = Max Reiter
+	email = {{ .email }}
+
+[init]
+	defaultBranch = trunk
+
+[includeIf "gitdir:{{ .git_alt_include_dir }}"]
+	path = "{{ .chezmoi.homeDir }}/.gitconfig-alt"

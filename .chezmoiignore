@@ -14,3 +14,29 @@
 # ignore repo metadata
 README.md
 LICENSE
+
+# ignore the following outside of work
+{{- if ne .chezmoi.hostname "D0384309DDD123" -}}
+
+.config/chrome-flags.conf
+.config/user-dirs.dirs
+
+.config/foot/
+.config/foot/**
+
+.config/fuzzel/
+.config/fuzzel/**
+
+.config/mako/
+.config/mako/**
+
+.config/sway/
+.config/sway/**
+.config/swayidle/
+.config/swayidle/**
+.config/swaylock/
+.config/swaylock/**
+.config/waybar/
+.config/waybar/**
+
+{{- end -}}
