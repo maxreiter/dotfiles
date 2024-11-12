@@ -114,6 +114,9 @@ bindsym $mod+Shift+b exec google-chrome-stable; exec firefox
 # Open Discord.
 bindsym $mod+Shift+d exec discord --enable-features=UseOzonePlatform --ozone-platform=wayland
 
+# Resize the current window to half of the output size.
+bindsym $mod+Shift+r resize set width 50
+
 # Enable dragging floating windows with the modifier key & mouse 1.
 # Resize windows with the modifier key and mouse 2.
 floating_modifier $mod normal
