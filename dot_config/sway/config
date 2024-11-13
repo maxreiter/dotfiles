@@ -114,6 +114,9 @@ bindsym $mod+Shift+b exec google-chrome-stable; exec firefox
 # Open Discord.
 bindsym $mod+Shift+d exec discord --enable-features=UseOzonePlatform --ozone-platform=wayland
 
+# Use Grim/Slurp/ImageMagick for a color picker.
+bindsym $mod+Shift+p exec $scripts/color-picker.fish
+
 # Resize the current window to half of the output size.
 bindsym $mod+Shift+r resize set width 50
 
