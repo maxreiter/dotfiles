@@ -200,6 +200,9 @@ require("lazy").setup({
 						},
 					},
 				},
+				dprint = {
+					filetypes = { "html", "scss" },
+				},
 			}
 
 			require("mason").setup()
@@ -244,6 +247,7 @@ require("lazy").setup({
 			formatters_by_ft = {
 				lua = { "stylua " },
 				go = { "goimports", "gofmt" },
+				html = {},
 			},
 			format_on_save = function(bufnr)
 				local disable_filetypes = { c = true, cpp = true }
