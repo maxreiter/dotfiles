@@ -22,7 +22,7 @@
 		"tray"
 	],
 	"clock": {
-		"format": "{:%r}",
+		"format": "{:%r %F}",
 		"timezone": "America/Phoenix"
 	},
 	"keyboard-state": {
