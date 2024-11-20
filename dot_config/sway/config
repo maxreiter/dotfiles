@@ -172,6 +172,15 @@ bindsym $mod+v splitv
 # Toggle fullscreen on the focused window.
 bindsym $mod+f fullscreen
 
+# Toggle floating on the focused window.
+bindsym $mod+Space floating toggle
+
+# Move focused window to scratchpad.
+bindsym $mod+minus move scratchpad
+
+# Retreive a window from the scratchpad.
+bindsym $mod+Shift+minus scratchpad show
+
 # Define resize mode.
 mode "resize" {
 	# In resize mode, grow or shrink the focused window with the arrow keys.
