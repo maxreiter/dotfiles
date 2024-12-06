@@ -56,7 +56,9 @@ output DP-1 pos 0 0 res 3840x2160
 
 # Set the position & resolution of the seconday monitor.
 # Using a negative number positions it on the left of DP-1.
-output DP-2 pos -1920 0 res 1920x1080
+output DP-2 pos -1080 0 res 1920x1080
+# Transform the rotation of the output so it's vertical.
+output DP-2 transform 90
 
 ###########
 # WINDOWS #
@@ -119,6 +121,8 @@ bindsym $mod+Shift+p exec $scripts/color-picker.fish
 
 # Resize the current window to half of the output size.
 bindsym $mod+Shift+r resize set width 50
+
+bindsym $mod+p exec feh ~/aah.jpg; floating enable
 
 # Enable dragging floating windows with the modifier key & mouse 1.
 # Resize windows with the modifier key and mouse 2.
