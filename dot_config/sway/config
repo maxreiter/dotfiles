@@ -70,20 +70,16 @@ for_window [shell="xwayland"] title_format "[XWayland] %title"
 # Resize Dolphin & toggle floating.
 for_window [title=".* — Dolphin"] floating enable, resize set width 1200 height 800
 
-# Set TeamDynamix service request windows to float.
-for_window [title=".*Service Request.* - Google Chrome"] floating enable
-
-# Set TeamDynamix incident windows to float.
+# Handle TeamDynamix windows.
+# TODO: Find a better RegEx that handles TDX windows on the district site properly.
+for_window [title=".*Service Request.* - Google Chrome"] floating enable.
 for_window [title=".*Incident.* - Google Chrome"] floating enable
 
-# Assign Firefox to workspace 2.
-assign [app_id=firefox] workspace 2
+# Assign the following windows to DP-1.
+assign [app_id=firefox] output DP-1
+assign [app_id=google-chrome] output DP-1
+assign [app_id=discord] output DP-1
 
-# Assign Google Chrome to workspace 2.
-assign [app_id=google-chrome] workspace 2
-
-# Assign Discord to workspace 3.
-assign [app_id=discord] workspace 3
 
 ############
 # BINDINGS #
@@ -121,8 +117,6 @@ bindsym $mod+Shift+p exec $scripts/color-picker.fish
 
 # Resize the current window to half of the output size.
 bindsym $mod+Shift+r resize set width 50
-
-bindsym $mod+p exec feh ~/aah.jpg; floating enable
 
 # Enable dragging floating windows with the modifier key & mouse 1.
 # Resize windows with the modifier key and mouse 2.
