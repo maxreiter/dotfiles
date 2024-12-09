@@ -1,0 +1,12 @@
+# Set the modifier key to the "Windows" key.
+set $mod Mod4
+
+# Set the scripts directory.
+# Scripts are written in Fish.
+set $scripts "~/.config/sway/scripts"
+
+# Set the terminal emulator.
+set $term foot
+
+# Set the application launcher.
+set $menu fuzzel | xargs swaymsg exec --

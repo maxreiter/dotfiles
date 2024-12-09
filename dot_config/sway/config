@@ -1,206 +1,23 @@
-#############
-# VARIABLES #
-#############
+# Include variables.
+include include/variables
 
-# Set the modifier key to the "Windows" key.
-set $mod Mod4
+# Include visual settings.
+include include/visuals
 
-# Set the scripts directory.
-# Scripts are written in Fish.
-set $scripts "~/.config/sway/scripts"
+# Include autostart applications.
+include include/autostarts
 
-# Set the terminal emulator to use.
-set $term foot
+# Include output settings.
+include include/outputs
 
-# Set the application launcher.
-set $menu fuzzel | xargs swaymsg exec --
+# Include window settings.
+include include/windows
 
-###########
-# VISUALS #
-###########
+# Include keybinds.
+include include/bindings
 
-# Set the color scheme to match Dracula.
-client.focused #6272A4 #6272A4 #F8F8F2
-client.focused_inactive #44475A #44475A #F8F8F2
-client.unfocused #282A36 #282A36 #F8F8F2
-client.urgent #FF5555 #FF5555 #F8F8F2
+# Include status_bar settings.
+include include/status_bar
 
-# Enable gaps between windows.
-gaps inner 5
-
-##############
-# AUTOSTARTS #
-##############
-
-# Enable Polkit for authentication.
-exec "/usr/lib/polkit-kde-authentication-agent-1"
-
-# Enable mako for notifications.
-exec mako
-
-# Enable swayidle for screen locking & timeout.
-exec swayidle
-
-###########
-# OUTPUTS #
-###########
-
-# Set the for all outputs.
-output * bg /home/max/.xdg/pictures/wallpapers/space1.png fill
-
-# Scale Sway to ensure everything fits 4k.
-output DP-1 scale 2
-
-# Set the position & resolution of the main monitor.
-output DP-1 pos 0 0 res 3840x2160
-
-# Set the position & resolution of the seconday monitor.
-# Using a negative number positions it on the left of DP-1.
-output DP-2 pos -1080 0 res 1920x1080
-# Transform the rotation of the output so it's vertical.
-output DP-2 transform 90
-
-###########
-# WINDOWS #
-###########
-
-# Mark all applications running in XWayland as such.
-for_window [shell="xwayland"] title_format "[XWayland] %title"
-
-# Resize Dolphin & toggle floating.
-for_window [title=".* — Dolphin"] floating enable, resize set width 1200 height 800
-
-# Handle TeamDynamix windows.
-# TODO: Find a better RegEx that handles TDX windows on the district site properly.
-for_window [title=".*Service Request.* - Google Chrome"] floating enable.
-for_window [title=".*Incident.* - Google Chrome"] floating enable
-
-# Assign the following windows to DP-1.
-assign [app_id=firefox] output DP-1
-assign [app_id=google-chrome] output DP-1
-assign [app_id=discord] output DP-1
-
-
-############
-# BINDINGS #
-############
-
-# Open a terminal.
-bindsym $mod+Return exec $term
-
-# Kill the focused window.
-bindsym $mod+Shift+q kill
-
-# Open the application launcher.
-bindsym $mod+d exec $menu
-
-# Lock the screen.
-bindsym $mod+l exec swaylock
-
-# Reload the config file in place.
-bindsym $mod+Shift+c reload
-
-# Open a prompt that exits Sway.
-bindsym $mod+Shift+e exec swaynag -t warning -m "Are you sure you want to exit?" -B "Yes" "swaymsg exit"
-
-# Execute a script that takes a screenshot.
-bindsym $mod+Shift+s exec $scripts/screenshot.fish
-
-# Open Firefox and Chrome.
-bindsym $mod+Shift+b exec google-chrome-stable; exec firefox
-
-# Open Discord.
-bindsym $mod+Shift+d exec discord --enable-features=UseOzonePlatform --ozone-platform=wayland
-
-# Use Grim/Slurp/ImageMagick for a color picker.
-bindsym $mod+Shift+p exec $scripts/color-picker.fish
-
-# Resize the current window to half of the output size.
-bindsym $mod+Shift+r resize set width 50
-
-# Enable dragging floating windows with the modifier key & mouse 1.
-# Resize windows with the modifier key and mouse 2.
-floating_modifier $mod normal
-
-# Toggle floating on the focused window.
-bindsym $mod+s floating toggle
-
-# Switch focus using the modifier key & arrow keys.
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
-# Move windows using the modifier key, shift, and arrow keys.
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
-# Switch workspaces with the modifier key & numbers.
-bindsym $mod+1 workspace number 1
-bindsym $mod+2 workspace number 2
-bindsym $mod+3 workspace number 3
-bindsym $mod+4 workspace number 4
-bindsym $mod+5 workspace number 5
-bindsym $mod+6 workspace number 6
-bindsym $mod+7 workspace number 7
-bindsym $mod+8 workspace number 8
-bindsym $mod+9 workspace number 9
-bindsym $mod+0 workspace number 10
-
-# Move windows to different workspaces using the modifier key, shift, and numbers.
-bindsym $mod+Shift+1 move container to workspace number 1
-bindsym $mod+Shift+2 move container to workspace number 2
-bindsym $mod+Shift+3 move container to workspace number 3
-bindsym $mod+Shift+4 move container to workspace number 4
-bindsym $mod+Shift+5 move container to workspace number 5
-bindsym $mod+Shift+6 move container to workspace number 6
-bindsym $mod+Shift+7 move container to workspace number 7
-bindsym $mod+Shift+8 move container to workspace number 8
-bindsym $mod+Shift+9 move container to workspace number 9
-bindsym $mod+Shift+0 move container to workspace number 10
-
-# Toggle splitting the screen horizontally.
-bindsym $mod+b splith
-
-# Toggle splitting the screen vertically.
-bindsym $mod+v splitv
-
-# Toggle fullscreen on the focused window.
-bindsym $mod+f fullscreen
-
-# Toggle floating on the focused window.
-bindsym $mod+Space floating toggle
-
-# Move focused window to scratchpad.
-bindsym $mod+minus move scratchpad
-
-# Retreive a window from the scratchpad.
-bindsym $mod+Shift+minus scratchpad show
-
-# Define resize mode.
-mode "resize" {
-	# In resize mode, grow or shrink the focused window with the arrow keys.
-	bindsym Left resize shrink width 10px
-	bindsym Down resize grow height 10px
-	bindsym Up resize shrink height 10px
-	bindsym Right resize grow width 10px
-
-	# Exit resize mode.
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-}
-
-# Enable resize mode.
-bindsym $mod+r mode "resize"
-
-##############
-# STATUS BAR #
-##############
-
-# Enable waybar as the status bar.
-bar swaybar_command waybar
-
+# Include default Sway configs.
 include /etc/sway/config.d/*
-

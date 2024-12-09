@@ -1,0 +1,2 @@
+# Enable waybar as the status bar.
+bar swaybar_command waybar

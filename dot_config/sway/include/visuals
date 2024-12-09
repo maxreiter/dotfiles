@@ -1,0 +1,14 @@
+# Set variables matching the Dracula color scheme.
+set $background "#282A36"
+set $foreground "#F8F8F2"
+set $comment "#6272A4"
+set $focused "#44475A"
+set $red "#FF5555"
+
+client.focused $comment $comment $foreground
+client.focused_inactive $focused $focused $foreground
+client.unfocused $background $background $foreground
+client.urgent $red $red $foreground
+
+# Enable gaps between windows.
+gaps inner 5

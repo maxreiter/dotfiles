@@ -1,0 +1,15 @@
+# Identify XWayland applications.
+for_window [shell="xwayland"] title_format "[XWayland] %title"
+
+# Resize Dolphin windows & toggle floating.
+for_window [title=".* — Dolphin"] floating enable, resize set width 1200 height 800
+
+# Handle TeamDynamix windows.
+# TODO: Find a better RegEx that handles TDX windows on the district site properly.
+for_window [title=".*Service Request.* - Google Chrome"] floating enable
+for_window [title=".*Incident.* - Google Chrome"] floating enable
+
+# Assign the following windows to DP-1.
+assign [app_id=firefox] output DP-1
+assign [app_id=google-chrome] output DP-1
+assign [app_id=discord] output DP-1
