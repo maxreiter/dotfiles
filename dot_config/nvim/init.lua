@@ -15,3 +15,5 @@ require("keybind")
 
 -- Load plugins
 require("plugin")
+
+vim.cmd.colorscheme("gruvbox")

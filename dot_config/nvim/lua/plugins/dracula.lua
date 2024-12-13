@@ -8,6 +8,17 @@ return {
 			local dracula = require("dracula")
 
 			dracula.setup({
+				styles = {
+					Type = {},
+					Function = {},
+					Parameter = {},
+					Property = {},
+					Comment = {},
+					String = {},
+					Keyword = {},
+					Identifier = {},
+					Constant = {},
+				},
 				transparent = false,
 				plugins = {
 					["nvim-treesitter"] = true,
@@ -16,9 +27,6 @@ return {
 					["lazy.nvim"] = true,
 				},
 			})
-
-			vim.cmd.colorscheme("dracula")
-			vim.cmd.colorscheme("dracula-soft")
-		end
+		end,
 	},
 }
