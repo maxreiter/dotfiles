@@ -9,7 +9,7 @@ local Hostname = {}
 -- @field HOME hostname for home
 -- @table names
 Hostname.names = {
-	WORK = "D0304389DDD123",
+	WORK = "D0384309DDD123",
 	HOME = "KAIMAN",
 }
 
