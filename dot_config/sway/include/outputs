@@ -9,7 +9,7 @@ output DP-1 pos 0 0 res 3840x2160
 
 # Set the position & resolution of the secondary output.
 # Using a negative number positions the output on the left of DP-1.
-output DP-2 pos -1080 0 res 1920x1080
+output DP-2 pos 1920 -270 res 1920x1080
 
 # Transform the rotation of the output to be vertical.
-output DP-2 transform 90
+output DP-2 transform 270
