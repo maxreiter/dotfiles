@@ -7,13 +7,13 @@ require("global_setting")
 -- Load local settings
 require("local_setting")
 
+-- Load plugins
+require("plugins")
+
 -- Load autocmds
 require("autocmd")
 
 -- Load keybinds
 require("keybind")
-
--- Load plugins
-require("plugin")
 
 vim.cmd.colorscheme("gruvbox")
