@@ -8,7 +8,7 @@ require("global_setting")
 require("local_setting")
 
 -- Load plugins
-require("plugins")
+require("plugin")
 
 -- Load autocmds
 require("autocmd")
