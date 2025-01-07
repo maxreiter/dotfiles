@@ -26,10 +26,10 @@ return {
 				snippet = {
 					expand = function(args)
 						luasnip.lsp_expand(args.body)
-					end
+					end,
 				},
 				completion = {
-					completeopt = "menu,menuone,noinsert"
+					completeopt = "menu,menuone,noinsert",
 				},
 				mapping = cmp.mapping.preset.insert({
 					["<C-n>"] = cmp.mapping.select_next_item(),
@@ -56,9 +56,6 @@ return {
 					},
 					{
 						name = "luasnip",
-					},
-					{
-						name = "path",
 					},
 				},
 			})
