@@ -1,10 +1,16 @@
-# Enable Polkit for authentication.
+# Autostart polkit for authentication.
 exec "/usr/lib/polkit-kde-authentication-agent-1"
 
-# Enable mako for notifications.
+# Autostart mako for notifications.
 # Configure at ~/.config/mako/config.
 exec mako
 
-# Enable swayidle for screen locking & timeout.
+# Autostart swayidle for screen locking & timeout.
 # Configure at ~/.config/swayidle/config.
 exec swayidle
+
+# Autostart Firefox.
+exec firefox
+
+# Autostart Chrome.
+exec google-chrome-stable

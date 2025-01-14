@@ -13,6 +13,9 @@ include include/outputs
 # Include window settings.
 include include/windows
 
+# Include workspace settings.
+include include/workspaces
+
 # Include keybinds.
 include include/bindings
 

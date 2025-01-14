@@ -9,7 +9,7 @@ for_window [title=".* — Dolphin"] floating enable, resize set width 1200 heigh
 for_window [title=".*Service Request.* - Google Chrome"] floating enable
 for_window [title=".*Incident.* - Google Chrome"] floating enable
 
-# Assign the following windows to DP-1.
-assign [app_id=firefox] output DP-1
-assign [app_id=google-chrome] output DP-1
-assign [app_id=discord] output DP-1
+# Assign the following windows to respective workspaces.
+assign [app_id=firefox] workspace $ws-2
+assign [app_id=google-chrome] workspace $ws-3
+assign [app_id=discord] workspace $ws-4
