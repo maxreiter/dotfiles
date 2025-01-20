@@ -6,7 +6,7 @@ return {
 			{ "williamboman/mason.nvim", config = true },
 			"williamboman/mason-lspconfig.nvim",
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
-			{ "j-hui/fidget.nvim",       opts = {} },
+			{ "j-hui/fidget.nvim", opts = {} },
 			"hrsh7th/cmp-nvim-lsp",
 		},
 		config = function()
@@ -32,11 +32,11 @@ return {
 							group = vim.api.nvim_create_augroup("max-lsp-detach", { clear = true }),
 							callback = function(event2)
 								vim.lsp.buf.clear_references()
-								vim.api.nvim_clear_autocmds { group = "max-lsp-highlight", buffer = event2.buf }
+								vim.api.nvim_clear_autocmds({ group = "max-lsp-highlight", buffer = event2.buf })
 							end,
 						})
 					end
-				end
+				end,
 			})
 
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -59,6 +59,7 @@ return {
 				dprint = {
 					filetypes = { "html", "scss" },
 				},
+				tinymist = {},
 			}
 
 			require("mason").setup()
@@ -66,9 +67,9 @@ return {
 			vim.list_extend(ensure_installed, {
 				"stylua",
 			})
-			require("mason-tool-installer").setup { ensure_installed = ensure_installed }
+			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
-			require("mason-lspconfig").setup {
+			require("mason-lspconfig").setup({
 				handlers = {
 					function(server_name)
 						local server = servers[server_name] or {}
@@ -76,7 +77,7 @@ return {
 						require("lspconfig")[server_name].setup(server)
 					end,
 				},
-			}
+			})
 		end,
 	},
 }
