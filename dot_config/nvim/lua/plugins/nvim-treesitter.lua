@@ -26,6 +26,7 @@ return {
 				"css",
 				"scss",
 				"dockerfile",
+				"typst",
 			},
 			auto_install = true,
 			highlight = {
