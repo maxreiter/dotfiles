@@ -59,7 +59,12 @@ return {
 				dprint = {
 					filetypes = { "html", "scss" },
 				},
-				tinymist = {},
+				tinymist = {
+					settings = {
+						exportPdf = "onSave",
+						formatterMode = "typstyle",
+					},
+				},
 			}
 
 			require("mason").setup()
