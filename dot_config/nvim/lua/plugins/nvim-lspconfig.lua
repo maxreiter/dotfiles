@@ -60,6 +60,7 @@ return {
 					filetypes = { "html", "scss" },
 				},
 				tinymist = {
+					filetypes = { "typst", "typ" },
 					settings = {
 						exportPdf = "onSave",
 						formatterMode = "typstyle",
