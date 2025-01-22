@@ -12,3 +12,7 @@ alias vim nvim
 alias task go-task
 
 thefuck --alias | source
+
+# ABBREVATIONS
+abbr -a -- czc 'chezmoi cd'
+abbr -a -- cza 'chezmoi add'
