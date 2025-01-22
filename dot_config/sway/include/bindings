@@ -31,6 +31,9 @@ bindsym $mod+Shift+p exec $scripts/color-picker.fish
 # Resize the curent window to half of the output size.
 bindsym $mod+Shift+r resize set width 50
 
+# Open the terminal and launch ncspot.
+bindsym $mod+Shift+m exec $term ncspot
+
 # Enable dragging floating windows with the modifier key & mouse 1.
 # Resize windows with the modifier key & mouse 2.
 floating_modifier $mod normal
