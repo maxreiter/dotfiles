@@ -5,6 +5,10 @@
 [init]
 	defaultBranch = trunk
 
+[branch "trunk"]
+	remote = origin
+	merge = refs/heads/trunk
+
 {{- $homeDir := .chezmoi.homeDir -}}
 {{- $gitBaseDir := .git_base_dir -}}
 {{- range $dir := .git_alt_include_dirs -}}
