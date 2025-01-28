@@ -9,9 +9,16 @@ return {
 			"MunifTanjim/nui.nvim",
 		},
 		config = function()
+			local hostname = require("helpers.hostname")
+			local position = "float"
+
+			if hostname.home() then
+				position = "left"
+			end
+
 			require("neo-tree").setup({
 				window = {
-					position = "float",
+					position = position,
 				},
 			})
 		end,
