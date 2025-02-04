@@ -15,6 +15,9 @@
 README.md
 LICENSE
 
+# ignore Lazy lockfile
+lazy-lock.json
+
 # ignore the following outside of work
 {{- if ne .chezmoi.hostname "D0384309DDD123" -}}
 
