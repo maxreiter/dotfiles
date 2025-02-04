@@ -4,7 +4,7 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 -- Toggle Neotree.
 vim.keymap.set("n", "<Bar>", "<Cmd>Neotree toggle<CR>")
 
--- Toggle floating diagnostics.
+-- Open diagnostic as floating window.
 vim.keymap.set("n", '"', function()
 	vim.diagnostic.open_float()
 end)
