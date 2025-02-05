@@ -12,5 +12,4 @@ alias vim nvim
 alias task go-task
 
 # ABBREVATIONS
-abbr -a -- czc 'chezmoi cd'
-abbr -a -- cza 'chezmoi add'
+abbr -a -- cz 'chezmoi'
