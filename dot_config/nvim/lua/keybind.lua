@@ -8,3 +8,12 @@ vim.keymap.set("n", "<Bar>", "<Cmd>Neotree toggle<CR>")
 vim.keymap.set("n", '"', function()
 	vim.diagnostic.open_float()
 end)
+
+-- Toggle zen-mode plugin
+vim.keymap.set("n", ";", function()
+	require("zen-mode").toggle({
+		window = {
+			width = 0.75,
+		},
+	})
+end)
