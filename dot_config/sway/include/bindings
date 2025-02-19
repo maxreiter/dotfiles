@@ -29,7 +29,7 @@ bindsym $mod+Shift+d exec discord --enable-features=UseOzonePlatform --ozone-pla
 bindsym $mod+Shift+p exec $scripts/color-picker.fish
 
 # Resize the curent window to half of the output size.
-bindsym $mod+Shift+r resize set width 50
+bindsym $mod+Shift+r exec $scripts/workspace.fish
 
 # Open the terminal and launch ncspot.
 bindsym $mod+Shift+m exec $term ncspot
