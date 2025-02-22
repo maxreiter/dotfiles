@@ -63,8 +63,7 @@ return {
 				tinymist = {
 					filetypes = { "typst", "typ" },
 					settings = {
-						exportPdf = "onSave",
-						formatterMode = "typstyle",
+						exportPdf = "never",
 					},
 				},
 			}
