@@ -9,11 +9,18 @@ return {
 			"MunifTanjim/nui.nvim",
 		},
 		config = function()
-			require("neo-tree").setup({
+			local hostname = require("helpers.hostname")
+			local opts = {
 				window = {
 					position = "float",
 				},
-			})
+			}
+
+			if hostname.home() then
+				opts.window.position = "left"
+			end
+
+			require("neo-tree").setup(opts)
 		end,
 	},
 }
