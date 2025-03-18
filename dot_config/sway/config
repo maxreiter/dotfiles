@@ -43,6 +43,10 @@ client.urgent $urgent-background $urgent-background $urgent-foreground $urgent-b
 
 gaps inner 5
 
+bar {
+	swaybar_command waybar
+}
+
 # Set up workspaces and default behaviors for certain windows
 assign [app_id=firefox] workspace 2
 assign [app_id=google-chrome] workspace 3
