@@ -1,5 +1,0 @@
-# Associate workspaces with specific outputs
-workspace $ws-1 output DP-1 # Terminal goes on main monitor
-workspace $ws-2 output DP-2 # Firefox goes on left monitor
-workspace $ws-3 output DP-2 # Chrome goes on left monitor
-workspace $ws-4 output DP-2 # Discord goes on left monitor

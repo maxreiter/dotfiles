@@ -1,26 +1,62 @@
-# Include variables.
-include include/variables
+# Set initial variables used throughout the config
+# Configure the modifier to use the Windows key
+set $mod Mod4
+set $scripts "~/.bin"
+set $term foot
+set $menu fuzzel | xargs swaymsg exec --
 
-# Include visual settings.
-include include/visuals
+# Define keybinds. Included in a separate file to reduce clutter
+include keybinds
 
-# Include autostart applications.
-include include/autostarts
+# Automatically start vital processes
+# Authentication agent for processes that require escalation
+exec "/usr/lib/polkit-kde-authentication-agent-1"
 
-# Include output settings.
-include include/outputs
+# Notification daemon, see ~/.config/mako for configuration
+exec mako
 
-# Include window settings.
-include include/windows
+# Idle manager, see ~/.config/swayidle for configuration
+exec swayidle
 
-# Include workspace settings.
-include include/workspaces
+exec firefox
+exec google-chrome-stable
 
-# Include keybinds.
-include include/bindings
+# Configure outputs
+output DP-1 pos 0 0 res 3840x2160 scale 2
+output DP-2 pos -1920 0 res 1920x1080
 
-# Include status_bar settings.
-include include/status_bar
+output * bg /home/max/.xdg/pictures/wallpapers/space1.png fill
 
-# Include default Sway configs.
+# Include variables used to theme environment
+include theme
+
+# Used the aforementioned variables to theme environment
+# Per sway 5:
+# client.<class> <border> <background> <text> [indicator] [child_border]
+# The first three colors are mandatory; when omitted the indicator will use a
+# sane default. The child_border will use the defined background color. Colors
+# use hexadecimal and support defining an alpha value
+client.focused $focused-background $focused-background $focused-foreground $focused-background
+client.focused_inactive $background $background $foreground $background
+client.unfocused $background $background $foreground $background
+client.urgent $urgent-background $urgent-background $urgent-foreground $urgent-background
+
+gaps inner 5
+
+# Set up workspaces and default behaviors for certain windows
+assign [app_id=firefox] workspace 2
+assign [app_id=google-chrome] workspace 3
+assign [app_id=discord] workspace 4
+
+workspace 1 output DP-1
+workspace 2 output DP-2
+workspace 3 output DP-2
+workspace 4 output DP-2
+
+for_window [shell="xwayland"] title_format "[XWayland] %title"
+for_window [title=".* Dolphin"] floating enable, resize set width 1200 height 800
+
+for_window [title=".*Service Request.* Google Chrome"] floating enable
+for_window [title=".*Incident.* Google Chrome"] floating enable
+
 include /etc/sway/config.d/*

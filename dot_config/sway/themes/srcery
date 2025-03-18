@@ -1,0 +1,13 @@
+# https://github.com/srcery-colors/srcery-palette/blob/main/palette.json
+# black and bright white
+set $background #1C1B19
+set $foreground #FCE8C3
+
+# white and black
+set $focused-background #BAA67F
+set $focused-foreground #1C1B19
+
+# red and bright white
+set $urgent-background #EF2F27
+set $urgent-foreground #FCE8C3
+
