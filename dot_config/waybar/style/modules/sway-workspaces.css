@@ -1,0 +1,15 @@
+#workspaces button {
+	background-color: @highlight-background;
+	color: @highlight-foreground;
+	padding: 0 5px;
+}
+
+#workspaces button.focused {
+	background-color: @focused-background;
+	color: @focused-foreground;
+}
+
+#workspaces button.urgent {
+	background-color: @urgent-background;
+	color: @urgent-foreground;
+}

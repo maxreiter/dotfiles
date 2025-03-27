@@ -1,0 +1,8 @@
+#window {
+	color: @foreground;
+	padding: 0 5px;
+}
+
+window#waybar.empty #window {
+	background-color: transparent;
+}
