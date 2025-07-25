@@ -1,8 +1,0 @@
-{
-	"network": {
-		"tooltip": false,
-		"format-ethernet": "  {ipaddr}",
-		"format-linked": "  {ifname}",
-		"format-disconnected": "  Disconnected"
-	}
-}

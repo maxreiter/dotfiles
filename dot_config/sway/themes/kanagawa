@@ -1,8 +1,0 @@
-set $background #181616
-set $foreground #C5C9C5
-
-set $focused-background #223249
-set $focused-foreground #C5C9C5
-
-set $urgent-background #E46876
-set $urgent-foreground #C5C9C5
