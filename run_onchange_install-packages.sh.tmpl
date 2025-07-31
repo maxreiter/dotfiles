@@ -1,4 +1,4 @@
-{{if eq .chezmoi.osRelease.id "arch"}}
+{{if eq .chezmoi.osRelease.id "arch" -}}
 #!/bin/bash
 
 set -e
@@ -6,9 +6,9 @@ set -e
 # Check if yay is installed, exiting if not
 command -v yay > /dev/null || exit 1
 
-{{range .packages -}}
-{{$packages := .packages | join " " -}}
+{{- range .packages}}
+{{$packages := .packages | join " "}}
 echo "{{.name}} :: {{.comment}}"
 sudo yay --sync --needed --noconfirm {{$packages}}
-{{end}}
+{{- end}}
 {{end}}
