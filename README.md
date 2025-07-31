@@ -8,6 +8,17 @@ These dotfiles were written and are intended to be used on a system running [Arc
 
 They are managed using [chezmoi](https://chezmoi.io), so that is required. Once you run `chezmoi apply`, and assuming you are on Arch, a script will be ran to automatically install required packages. The script expects you to have [yay](https://github.com/Jguer/yay) installed, otherwise it will exit with an error. See [packages.jsonc](.chezmoidata/packages.jsonc) for a list of packages that are installed.
 
+It's also expected that you have the following data defined in your `chezmoi.toml`.
+
+```toml
+[data]
+    email = "..."
+    altEmail = "..."
+    gitBaseDir = "/path/to/your/base/dir"
+    gitAltIncludeDirs = ["...", "...", "..."]
+    wallpaperDir = "/path/to/your/wallpapers"
+```
+
 > License
 
 You should probably write your own configs, but see [LICENSE](LICENSE) if you want.
