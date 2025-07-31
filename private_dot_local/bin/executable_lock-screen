@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+IMAGE_FILE_NAME=$(mktemp)
+
+grim -c - | magick - -scale 10% -blur 0x1 -resize 1000% $IMAGE_FILE_NAME
+
+swaylock -c ~/.config/swaylock/config -i $IMAGE_FILE_NAME
+
+rm $IMAGE_FILE_NAME

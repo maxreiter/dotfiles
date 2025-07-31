@@ -1,0 +1,40 @@
+#!/usr/bin/bash
+
+SLEEP="  Sleep"
+SHUTDOWN="  Shutdown"
+LOGOUT="  Logout"
+REBOOT="  Reboot"
+LOCK="  Lock"
+
+FONT="NotoMono Nerd Font:size=16"
+LINES=5
+PAD=10
+LINE_HEIGHT=20
+PLACEHOLDER="Power Options:"
+
+OPTION=$(echo -e "$SLEEP\n$SHUTDOWN\n$LOGOUT\n$REBOOT\n$LOCK" | fuzzel --dmenu --font="$FONT" --lines=$LINES --inner-pad=$PAD --prompt="" --line-height=$LINE_HEIGHT --placeholder="$PLACEHOLDER")
+
+case $OPTION in
+	$SLEEP)
+		systemctl sleep
+		;;
+	
+	$SHUTDOWN)
+		poweroff
+		;;
+
+	$LOGOUT)
+		swaymsg exit
+		;;
+
+	$REBOOT)
+		systemctl reboot
+		;;
+	
+	$LOCK)
+		swaylock
+		;;
+	*)
+		exit
+esac
+		
