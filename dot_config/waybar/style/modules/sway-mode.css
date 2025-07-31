@@ -1,0 +1,4 @@
+#mode {
+	color: @urgent-foreground;
+	background-color: @urgent-background;
+}

@@ -1,0 +1,18 @@
+@import url("./style/theme.css");
+
+* {
+	min-height: 0;
+
+	font-family: "NotoSans Nerd Font Propo";
+	font-size: 14px;
+
+	border: none;
+	border-radius: 0;
+}
+
+window#waybar {
+	background-color: @background;
+	color: @foreground;
+}
+
+@import url("./style/modules.css");

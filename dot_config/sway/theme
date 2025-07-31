@@ -1,0 +1,6 @@
+include themes/moonfly
+
+client.focused $focused-background $focused-background $focused-foreground $focused-background
+client.focused_inactive $background $background $foreground $background
+client.unfocused $background $background $foreground $background
+client.urgent $urgent-background $urgent-background $urgent-foreground $urgent-background

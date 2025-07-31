@@ -1,0 +1,23 @@
+@define-color black 	#0C0C0C;
+@define-color red 	#C50F1F;
+@define-color green 	#13A10E;
+@define-color yellow 	#C19C00;
+@define-color blue 	#0037DA;
+@define-color purple	#881798;
+@define-color cyan	#3A96DD;
+@define-color white	#CCCCCC;
+
+@define-color brblack	#767676;
+@define-color brred	#E74856;
+@define-color brgreen	#16C60C;
+@define-color bryellow	#F9F1A5;
+@define-color brblue	#3B78FF;
+@define-color brpurple	#B4009E;
+@define-color brcyan	#61D6D6;
+@define-color brwhite	#FFFFFF;
+
+@define-color background @black;
+@define-color foreground @brwhite;
+
+@define-color highlight @cyan;
+@define-color urgent @red;

@@ -1,0 +1,2 @@
+timeout 300 '/home/max/.local/bin/lock-screen'
+timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"'

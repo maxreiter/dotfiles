@@ -1,0 +1,19 @@
+# Ignore repository metadata
+README.md
+LICENSE
+
+# Ignore state files
+lazy-lock.json
+
+# Ignore .git directories
+**/.git/
+**/.git/**/*
+
+# Ignore .github directories
+**/.github/
+**/.github/**/*
+
+# Ignore .gitignore directories
+.gitignore
+
+# vim: ft=gitignore

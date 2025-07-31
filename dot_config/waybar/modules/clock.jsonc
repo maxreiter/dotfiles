@@ -1,0 +1,26 @@
+{
+	"clock#date": {
+		"format": " {:%D}",
+		"tooltip": false,
+		"timezones": [
+			"America/Los_Angeles",
+			"America/Phoenix"
+		],
+		"actions": {
+			"on-click": "tz_up",
+			"on-click-right": "tz_down"
+		}
+	},
+	"clock#time": {
+		"format": " {:%I:%M %p %Z}",
+		"tooltip": false,
+		"timezones": [
+			"America/Los_Angeles",
+			"America/Phoenix"
+		],
+		"actions": {
+			"on-click": "tz_up",
+			"on-click-right": "tz_down"
+		}
+	}
+}

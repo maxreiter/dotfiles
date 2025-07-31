@@ -1,0 +1,37 @@
+@define-color background           #080808;
+@define-color foreground           #BDBDBD;
+@define-color bold                 #EEEEEE;
+@define-color cursor               #9E9E9E;
+@define-color cursor-text          @background;
+@define-color selection            #B2CEEE;
+@define-color selection-text       @background;
+
+@define-color black                #323437;
+@define-color red                  #FF5D5D;
+@define-color green                #8CC85F;
+@define-color yellow               #E3C78A;
+@define-color blue                 #80A0FF;
+@define-color purple               #CF87E8;
+@define-color cyan                 #79DAC8;
+@define-color white                #C6C6C6;
+
+@define-color bright-blue          #74B2FF;
+@define-color bright-red           #FF5189;
+@define-color bright-green         #26C692;
+@define-color bright-yellow        #C6C684;
+@define-color bright-blue          #74B2FF;
+@define-color bright-purple        #AE81FF;
+@define-color bright-cyan          #85DC85;
+@define-color bright-white         #E4E4E4;
+
+@define-color default-background   @background;
+@define-color default-foreground   @foreground;
+
+@define-color selected-background  @selection;
+@define-color selected-foreground  @selection-text;
+
+@define-color highlight-background @bright-blue;
+@define-color highlight-foreground @background;
+
+@define-color urgent-background    @bright-red;
+@define-color urgent-foreground    @background;

@@ -1,0 +1,21 @@
+set $cursor #FFFFFF
+
+set $black #0C0C0C
+set $red #C50F1F
+set $green #13A10E
+set $yellow #C19C00
+set $blue 0037DA
+set $purple #881798
+set $cyan #3A96DD
+set $white #CCCCCC
+
+set $brblack #767676
+
+set $background $black
+set $foreground $white
+
+set $focused-background $cyan
+set $focused-foreground	$cursor
+
+set $urgent-background $red
+set $urgent-foreground $white

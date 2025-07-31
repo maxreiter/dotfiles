@@ -1,0 +1,15 @@
+{
+	"sway/workspaces": {
+		"format": "{icon}",
+		"disable-scroll": true,
+		"disable-click": true,
+		"persistent-workspaces": {
+			"1": [],
+		},
+		"format-icons": {
+			"1": "",
+			"2": "",
+			"urgent": "󰈅"
+		}
+	}
+}

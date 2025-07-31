@@ -1,0 +1,21 @@
+#workspaces button {
+	background: @background;
+	color: @foreground;
+	padding: 0 5px;
+}
+
+#workspaces button:hover {
+	border: none;
+	box-shadow: inherit;
+	text-shadow: inherit;
+}
+
+#workspaces button.focused {
+	background-color: @highlight-background;
+	color: @highlight-foreground;
+}
+
+#workspaces button.urgent {
+	background-color: @urgent-background;
+	color: @urgent-foreground;
+}
