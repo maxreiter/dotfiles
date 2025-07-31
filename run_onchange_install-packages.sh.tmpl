@@ -5,10 +5,8 @@ set -e
 
 # Check if yay is installed, exiting if not
 command -v yay > /dev/null || exit 1
-
-{{- range .packages}}
-{{$packages := .packages | join " "}}
+{{range .packages}}
 echo "{{.name}} :: {{.comment}}"
-sudo yay --sync --needed --noconfirm {{$packages}}
-{{- end}}
+yay --sync --needed --noconfirm {{.packages | join " "}}
 {{end}}
+{{- end}}
