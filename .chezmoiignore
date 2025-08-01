@@ -16,4 +16,7 @@ lazy-lock.json
 # Ignore .gitignore directories
 .gitignore
 
+# Prevent wallpapers.tar from being added to the destination
+wallpapers.tar
+
 # vim: ft=gitignore
