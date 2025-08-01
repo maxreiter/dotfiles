@@ -10,18 +10,18 @@ if [ ! -e "$BASE_DIR" ]; then
 fi
 
 for DIR in $USER_DIRS; do
-    local PATH="$BASE_DIR/$DIR"
-    if [ -e "$PATH" ]; then
+    USER_DIR="$BASE_DIR/$DIR"
+    if [ -e "$USER_DIR" ]; then
         continue
     fi
 
-    mkdir $PATH
+    mkdir $USER_DIR
 done
 
 if [ -e "$WALLPAPERS_PATH" ]; then
     command -v tar > /dev/null || exit 1
 
-    local PATH="$BASE_DIR/pictures/wallpapers"
-    mkdir $PATH
-    tar --directory $PATH --extract --file $WALLPAPERS_PATH
+    WP_DIR="$BASE_DIR/pictures/wallpapers"
+    mkdir $WP_DIR
+    tar --directory $WP_DIR --extract --file $WALLPAPERS_PATH
 fi
