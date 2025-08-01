@@ -1,0 +1,27 @@
+#!/bin/bash
+{{- $homeDir := .chezmoi.homeDir}}
+
+BASE_DIR="{{$homeDir}}/.xdg"
+USER_DIRS="desktop documents downloads music pictures public templates videos"
+WALLPAPERS_PATH="{{$homeDir}}/.local/share/chezmoi/wallpapers.tar"
+
+if [ ! -e "$BASE_DIR" ]; then
+    mkdir $BASE_DIR
+fi
+
+for DIR in $USER_DIRS; do
+    local PATH="$BASE_DIR/$DIR"
+    if [ -e "$PATH" ]; then
+        continue
+    fi
+
+    mkdir $PATH
+done
+
+if [ -e "$WALLPAPERS_PATH" ]; then
+    command -v tar > /dev/null || exit 1
+
+    local PATH="$BASE_DIR/pictures/wallpapers"
+    mkdir $PATH
+    tar --directory $PATH --extract --file $WALLPAPERS_PATH
+fi
