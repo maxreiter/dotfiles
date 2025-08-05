@@ -1,3 +1,26 @@
 #!/usr/bin/bash
 
-slurp | grim -g "-" - | wl-copy
+SCREENSHOT="  Screenshot"
+SCREENSHOT_AREA="  Screenshot area"
+
+FONT="NotoMono Nerd Font:size=16"
+LINES=2
+PAD=10
+LINE_HEIGHT=20
+PLACEHOLDER="Screen Capture:"
+
+OPTION=$(echo -e "$SCREENSHOT\n$SCREENSHOT_AREA" | fuzzel --dmenu --font="$FONT" --lines=$LINES --inner-pad=$PAD --prompt="" --line-height=$LINE_HEIGHT --placeholder="$PLACEHOLDER")
+
+case $OPTION in
+    $SCREENSHOT)
+        grim - | wl-copy
+        notify-send "Copied screenshot to clipboard"
+        ;;
+
+    $SCREENSHOT_AREA)
+        grim -g "$(slurp)" - | wl-copy
+        notify-send "Copied screenshot of area to clipboard"
+        ;;
+    *)
+        exit
+esac

@@ -18,7 +18,6 @@ bar {
 
 gaps inner 5
 
-assign [app_id=firefox] workspace 2
 for_window [shell="xwayland"] title_format "[XWayland] %title"
 
 include /etc/sway/config.d/*
